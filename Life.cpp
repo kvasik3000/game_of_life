@@ -22,6 +22,7 @@ Life::Life(int a,int b)
 	}
 }
 
+
 Life::~Life() {}
 
 int Life::check_rule(int k, int l)
@@ -37,7 +38,7 @@ int Life::check_rule(int k, int l)
 			{
 				i_i = a-1;
 			}
-			if (i_i >= a)
+			else if (i_i >= a)
 			{
 				i_i = 0;
 			}
@@ -45,7 +46,7 @@ int Life::check_rule(int k, int l)
 			{
 				j_j = 0;
 			}
-			if (j_j==-1)
+			else if (j_j==-1)
 			{
 				j_j = b-1;
 			}
@@ -58,11 +59,11 @@ int Life::check_rule(int k, int l)
 	{
 		life_next[k][l] = 1;
 	}
-	if ((life_count == 2 || life_count == 3) && life_array[k][l] == 1)
+	else if ((life_count == 2 || life_count == 3) && life_array[k][l] == 1)
 	{
 		life_next[k][l] = 1;
 	}
-	if ((life_count < 2 || life_count > 3) && life_array[k][l]==1)
+	else
 	{
 		life_next[k][l] = 0;
 	}
@@ -70,34 +71,34 @@ int Life::check_rule(int k, int l)
 	return life_next[k][l];
 }
 
-void Life::print_life()
-{
-	for (int i = 0; i < a+2; i++)
-	{
-		cout << "#";
-	}
-	cout << endl;
-	for (int k = 0; k < a; k++) {
-		cout << "#";
-		for (int l = 0; l < b; l++) {
-			if (life_array[k][l]==1)
-			{
-				cout << "+";
-			}
-			else
-			{
-				cout << " ";
-			}
-		}
-		cout << "#"<<endl;
-		
-	}
-	for (int i = 0; i < a + 2; i++)
-	{
-		cout << "#";
-	}
-	cout << endl;
-}
+//void Life::print_life()
+//{
+//	for (int i = 0; i < a+2; i++)
+//	{
+//		cout << "#";
+//	}
+//	cout << endl;
+//	for (int k = 0; k < a; k++) {
+//		cout << "#";
+//		for (int l = 0; l < b; l++) {
+//			if (life_array[k][l]==1)
+//			{
+//				cout << "+";
+//			}
+//			else
+//			{
+//				cout << " ";
+//			}
+//		}
+//		cout << "#"<<endl;
+//		
+//	}
+//	for (int i = 0; i < a + 2; i++)
+//	{
+//		cout << "#";
+//	}
+//	cout << endl;
+//}
 
 void Life::generate_life()
 {
@@ -117,30 +118,66 @@ void Life::generate_life()
 
 
 
-void Life::run_life()
-{
-	generate_life();
-	print_life();
-	Sleep(1000);
-	//system("cls");
-	while (true)
-	{
-		for (int k = 0; k < a ; k++) {
-			for (int l = 0; l < b; l++) {
-				check_rule(k,l);
-			}
-		}
-		for (int i = 0; i < a ; i++)
-		{
-			for (int j = 0; j < b; j++)
-			{
-				life_array[i][j] = life_next[i][j];
-				life_next[i][j] = 0;
-			}
-		}
-		system("cls");
-		print_life();
-		Sleep(45);
+//void Life::run_life()
+//{
+//	generate_life();
+//	print_life();
+//	Sleep(1000);
+//	//system("cls");
+//	while (true)
+//	{
+//		for (int k = 0; k < a ; k++) {
+//			for (int l = 0; l < b; l++) {
+//				check_rule(k,l);
+//			}
+//		}
+//		life_array = life_next;
+//		for (int i = 0; i < a ; i++)
+//		{
+//			for (int j = 0; j < b; j++)
+//			{
+//				life_next[i][j] = 0;
+//			}
+//		}
+//		system("cls");
+//		print_life();
+//		Sleep(45);
+//
+//	}
+//}
 
+std::vector<std::vector<int>> Life::get_life_array() {
+	return life_array;
+}
+
+std::vector<std::vector<int>> Life::get_life_next()
+{
+	return life_next;
+}
+
+int Life::get_a()
+{
+	return a;
+}
+
+int Life::get_b()
+{
+	return b;
+}
+
+void Life::update()
+{
+	for (int k = 0; k < a; k++) {
+		for (int l = 0; l < b; l++) {
+			check_rule(k, l);
+		}
 	}
+	life_array = life_next;
+	/*for (int i = 0; i < a; i++)
+	{
+		for (int j = 0; j < b; j++)
+		{
+			life_next[i][j] = 0;
+		}
+	}*/
 }

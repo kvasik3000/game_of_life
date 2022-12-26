@@ -11,17 +11,24 @@ class Life
 	
 	/*int life_array[a][b];
 	int life_next[a][b];*/
-	int check_rule(int k, int l);
-	void print_life();
-	void generate_life();
+	
+	/*void print_life();*/
+	
 	int a;
 	int b;
 
 public:
 	Life(int a, int b);
+	Life() : Life(12, 12) {};
 	~Life();
-
-	void run_life();
+	void generate_life();
+	int check_rule(int k, int l);
+	/*void run_life();*/
+	std::vector<std::vector<int>> get_life_array();
+	std::vector<std::vector<int>> get_life_next();
+	void update();
+	int get_a();
+	int get_b();
 
 };
 

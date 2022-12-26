@@ -1,11 +1,12 @@
 #include "Life.h"
 #include "Rule.h"
+#include "View.h"
 
 
 
 
 int main(int argc,char *argv[]) {
-	Life game(12,12);
-	game.run_life();
+	View game(30, 30);
+	game.run_game();
 	return 0;
 }
