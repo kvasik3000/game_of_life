@@ -71,80 +71,72 @@ int Life::check_rule(int k, int l)
 	return life_next[k][l];
 }
 
-//void Life::print_life()
-//{
-//	for (int i = 0; i < a+2; i++)
-//	{
-//		cout << "#";
-//	}
-//	cout << endl;
-//	for (int k = 0; k < a; k++) {
-//		cout << "#";
-//		for (int l = 0; l < b; l++) {
-//			if (life_array[k][l]==1)
-//			{
-//				cout << "+";
-//			}
-//			else
-//			{
-//				cout << " ";
-//			}
-//		}
-//		cout << "#"<<endl;
-//		
-//	}
-//	for (int i = 0; i < a + 2; i++)
-//	{
-//		cout << "#";
-//	}
-//	cout << endl;
-//}
+
 
 void Life::generate_life()
 {
+	//
+	//random generate
 	/*for (int k = 1; k < a - 1; k++) {
 		for (int l = 1; l < b - 1; l++) {
 			life_array[k][l] = rand()%2;
 		}
 	}*/
-	int i = 3;
+
+	//
+	//Glider
+	/*int i = 3;
 	int j = 3;
 	life_array[i][j] = 1;
 	life_array[i+1][j] = 1;
 	life_array[i+2][j] = 1;
 	life_array[i+2][j-1] = 1;
-	life_array[i+1][j-2] = 1;
+	life_array[i+1][j-2] = 1;*/
+
+	//
+	//Gosper glider gun
+	int i = 14;
+	int j = 1;
+	life_array[i][j] = 1;
+	life_array[i+1][j] = 1;
+	life_array[i+1][j+1] = 1;
+	life_array[i][j+1] = 1;
+	life_array[i][j+10] = 1;
+	life_array[i-1][j+11] = 1;
+	life_array[i-2][j+12] = 1;
+	life_array[i-2][j+13] = 1;
+	life_array[i+1][j+10] = 1;
+	life_array[i+1][j+14] = 1;
+	life_array[i+1][j+16] = 1;
+	life_array[i][j+16] = 1;
+	life_array[i-1][j+15] = 1;
+	life_array[i+1][j+17] = 1;//середина
+	life_array[i][j+20] = 1;
+	life_array[i-1][j+20] = 1;
+	life_array[i-2][j+20] = 1;
+	life_array[i-3][j+22] = 1;
+	life_array[i-3][j+24] = 1;
+	life_array[i-4][j+24] = 1;
+	life_array[i][j + 21] = 1;
+	life_array[i+1][j + 22] = 1;
+	life_array[i+1][j + 24] = 1;
+	life_array[i-1][j + 34] = 1;
+	life_array[i-2][j + 34] = 1;
+	life_array[i+2][j + 24] = 1;
+	life_array[i - 1][j + 35] = 1;
+	life_array[i - 2][j + 35] = 1;
+	life_array[i - 1][j + 21] = 1;
+	life_array[i - 2][j + 21] = 1;
+	life_array[i+2][j+10] = 1;
+	life_array[i+3][j+11] = 1;
+	life_array[i+4][j+12] = 1;
+	life_array[i+4][j+13] = 1;
+	life_array[i+3][j+15] = 1;
+	life_array[i+2][j+16] = 1;
+
+
 }
 
-
-
-//void Life::run_life()
-//{
-//	generate_life();
-//	print_life();
-//	Sleep(1000);
-//	//system("cls");
-//	while (true)
-//	{
-//		for (int k = 0; k < a ; k++) {
-//			for (int l = 0; l < b; l++) {
-//				check_rule(k,l);
-//			}
-//		}
-//		life_array = life_next;
-//		for (int i = 0; i < a ; i++)
-//		{
-//			for (int j = 0; j < b; j++)
-//			{
-//				life_next[i][j] = 0;
-//			}
-//		}
-//		system("cls");
-//		print_life();
-//		Sleep(45);
-//
-//	}
-//}
 
 std::vector<std::vector<int>> Life::get_life_array() {
 	return life_array;
@@ -173,11 +165,4 @@ void Life::update()
 		}
 	}
 	life_array = life_next;
-	/*for (int i = 0; i < a; i++)
-	{
-		for (int j = 0; j < b; j++)
-		{
-			life_next[i][j] = 0;
-		}
-	}*/
 }

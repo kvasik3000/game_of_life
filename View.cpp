@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <vector>
 #include"Life.h"
+#include <conio.h>
 
 View::View(int a, int b)
 {
@@ -18,7 +19,7 @@ View::~View()
 void View::print_life()
 {
 	std::string buffer = "";
-	for (int i = 0; i < life->get_a() + 2; i++)
+	for (int i = 0; i < life->get_b() + 2; i++)
 	{
 		//std::cout << "#";
 		buffer += '#';
@@ -43,7 +44,7 @@ void View::print_life()
 		//std::cout << "#" << std::endl;
 		buffer += "#\n";
 	}
-	for (int i = 0; i < life->get_a() + 2; i++)
+	for (int i = 0; i < life->get_b() + 2; i++)
 	{
 		//std::cout << "#";
 		buffer += '#';
@@ -63,10 +64,33 @@ void View::run_game()
 	Sleep(1000);
 	while (true)
 	{
-		life->update();
-		//system("cls");
-		print_life();
-		Sleep(15);
+		if (_kbhit() && _getch() == 13) {
 
+			while (true)
+			{
+				/*char ch;*/
+
+				life->update();
+				//system("cls");
+				print_life();
+				Sleep(15);
+				if (_kbhit() && _getch() == 13) {
+					break;
+				}
+
+			}
+		}
+		
 	}
+	
+	//while (true)
+	//{
+	//	/*char ch;*/
+
+	//	life->update();
+	//	//system("cls");
+	//	print_life();
+	//	Sleep(15);
+
+	//}
 }
