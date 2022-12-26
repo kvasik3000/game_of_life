@@ -3,6 +3,7 @@
 #include<ctime>
 #include<iostream>
 #include<windows.h>
+#include<vector>
 using namespace std;
 
 Life::Life()
@@ -21,13 +22,30 @@ Life::~Life()
 
 int Life::check_rule(int k, int l)
 {
-
 	int life_count = 0;
 
 	for (int i = k - 1; i < k + 2; i++)
 	{
+		int i_i = i;
 		for (int j = l - 1; j < l + 2; j++) {
-			life_count = life_count + life_array[i][j];
+			int j_j = j;
+			if (i_i == -1)
+			{
+				i_i = a-1;
+			}
+			if (i_i >= a)
+			{
+				i_i = 0;
+			}
+			if (j_j>=b)
+			{
+				j_j = 0;
+			}
+			if (j_j==-1)
+			{
+				j_j = b-1;
+			}
+			life_count = life_count + life_array[i_i][j_j];
 		}
 	}
 	life_count = life_count - life_array[k][l];
@@ -50,8 +68,8 @@ int Life::check_rule(int k, int l)
 
 void Life::print_life()
 {
-	for (int k = 1; k < a - 1; k++) {
-		for (int l = 1; l < b - 1; l++) {
+	for (int k = 0; k < a; k++) {
+		for (int l = 0; l < b; l++) {
 			if (life_array[k][l]==1)
 			{
 				cout << "+";
@@ -77,6 +95,8 @@ void Life::generate_life()
 	life_array[i][j] = 1;
 	life_array[i+1][j] = 1;
 	life_array[i+2][j] = 1;
+	life_array[i+2][j-1] = 1;
+	life_array[i+1][j-2] = 1;
 }
 
 
@@ -89,16 +109,17 @@ void Life::run_life()
 	system("cls");
 	while (true)
 	{
-		for (int k = 1; k < a - 1; k++) {
-			for (int l = 1; l < b - 1; l++) {
+		for (int k = 0; k < a ; k++) {
+			for (int l = 0; l < b; l++) {
 				check_rule(k,l);
 			}
 		}
-		for (int i = 0; i < a + 1; i++)
+		for (int i = 0; i < a ; i++)
 		{
-			for (int j = 0; j < b + 1; j++)
+			for (int j = 0; j < b; j++)
 			{
 				life_array[i][j] = life_next[i][j];
+				life_next[i][j] = 0;
 			}
 		}
 		print_life();
