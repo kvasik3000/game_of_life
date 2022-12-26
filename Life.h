@@ -1,11 +1,13 @@
 #pragma once
 #include<vector>
+#include"Rule.h"
 
 //const int a = 12;
 //const int b = 12;
 
 class Life
 {
+	Rule*rule;
 	std::vector<std::vector<int>>life_array;
 	std::vector<std::vector<int>>life_next;
 	

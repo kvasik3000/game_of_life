@@ -59,9 +59,12 @@ void View::print_life()
 
 void View::run_game()
 {
+	/*std::cout << "dddddddddddddddddd" << std::endl;*/
+
 	life->generate_life();
 	print_life();
 	Sleep(1000);
+	int count = 0;
 	while (true)
 	{
 		if (_kbhit() && _getch() == 13) {
@@ -73,13 +76,21 @@ void View::run_game()
 				life->update();
 				//system("cls");
 				print_life();
-				Sleep(15);
+				Sleep(5);
 				if (_kbhit() && _getch() == 13) {
+					std::cout << "number of iteration:" << count << std::endl;
 					break;
 				}
+				
+				count++;
+				std::cout <<"number of iteration:" << count << std::endl;
 
 			}
 		}
+		if (_kbhit() && _getch() == 27) {
+			exit(0);
+		}
+		
 		
 	}
 	
