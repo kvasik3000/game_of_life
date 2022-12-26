@@ -1,9 +1,8 @@
 #pragma once
-#define X_line 10
-#define Y_line 10
 
-const int a = X_line + 2;
-const int b = Y_line + 2;
+
+const int a = 12;
+const int b = 12;
 
 class Life
 {

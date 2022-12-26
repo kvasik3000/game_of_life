@@ -1,6 +1,15 @@
 #pragma once
+#include <vector>
+
 class Rule
 {
-	int check_rule(int k, int l);
+	std::vector<int>born;
+	std::vector<int>survive;
+
+public:
+	Rule(std::vector<int>born, std::vector<int>survive);
+	Rule();
+	~Rule();
+
 };
 

@@ -1,9 +1,9 @@
 #include "Life.h"
-#include<cstdlib>
-#include<ctime>
-#include<iostream>
-#include<windows.h>
-#include<vector>
+#include <cstdlib>
+#include <ctime>
+#include <iostream>
+#include <windows.h>
+#include <vector>
 using namespace std;
 
 Life::Life()
@@ -68,7 +68,13 @@ int Life::check_rule(int k, int l)
 
 void Life::print_life()
 {
+	for (int i = 0; i < a+2; i++)
+	{
+		cout << "#";
+	}
+	cout << endl;
 	for (int k = 0; k < a; k++) {
+		cout << "#";
 		for (int l = 0; l < b; l++) {
 			if (life_array[k][l]==1)
 			{
@@ -79,8 +85,14 @@ void Life::print_life()
 				cout << " ";
 			}
 		}
-		cout << endl;
+		cout << "#"<<endl;
+		
 	}
+	for (int i = 0; i < a + 2; i++)
+	{
+		cout << "#";
+	}
+	cout << endl;
 }
 
 void Life::generate_life()
@@ -106,7 +118,7 @@ void Life::run_life()
 	generate_life();
 	print_life();
 	Sleep(1000);
-	system("cls");
+	//system("cls");
 	while (true)
 	{
 		for (int k = 0; k < a ; k++) {
@@ -122,8 +134,9 @@ void Life::run_life()
 				life_next[i][j] = 0;
 			}
 		}
-		print_life();
-		Sleep(5);
 		system("cls");
+		print_life();
+		Sleep(45);
+
 	}
 }

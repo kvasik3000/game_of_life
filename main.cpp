@@ -1,5 +1,5 @@
-#include"Life.h"
-
+#include "Life.h"
+#include "Rule.h"
 
 
 
