@@ -6,19 +6,23 @@
 #include <vector>
 using namespace std;
 
-Life::Life()
+Life::Life(int a,int b)
 {
+	this->a = a;
+	this->b = b;
+
 	for (int k = 0; k < a; k++) {
+		std::vector<int> r1, r2;
 		for (int l = 0; l < b; l++) {
-			life_array[k][l] = 0;
-			life_next[k][l] = 0;
+			r1.push_back(0);
+			r2.push_back(0);
 		}
+		life_array.push_back(r1);
+		life_next.push_back(r2);
 	}
 }
 
-Life::~Life()
-{
-}
+Life::~Life() {}
 
 int Life::check_rule(int k, int l)
 {

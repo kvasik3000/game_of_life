@@ -4,8 +4,8 @@
 
 
 
-int main() {
-	Life game;
+int main(int argc,char *argv[]) {
+	Life game(12,12);
 	game.run_life();
 	return 0;
 }
