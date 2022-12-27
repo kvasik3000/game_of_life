@@ -8,9 +8,9 @@
 #include "Rule.h"
 using namespace std;
 
-Life::Life(int a, int b)
+Life::Life(int a, int b, Rule* rule)
 {
-	this->rule = new Rule();
+	this->rule = rule;
 	this->a = a;
 	this->b = b;
 

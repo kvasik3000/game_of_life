@@ -7,17 +7,19 @@
 #include"Life.h"
 #include <conio.h>
 
-View::View(int a, int b)
+View::View(int a, int b, Rule* rule)
 {
-	this->life = new Life(a, b);
+	this->life = new Life(a, b, rule);
 }
 
 View::~View()
 {
+	delete life;
 }
 
 void View::print_life()
 {
+
 	std::string buffer = "";
 	for (int i = 0; i < life->get_b() + 2; i++)
 	{

@@ -1,0 +1,4 @@
+#Life 1.06
+#N My universe
+#R B01234567/S01
+#S 30 40

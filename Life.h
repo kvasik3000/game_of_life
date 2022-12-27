@@ -20,8 +20,8 @@ class Life
 	int b;
 
 public:
-	Life(int a, int b);
-	Life() : Life(12, 12) {};
+	Life(int a, int b,Rule* rule);
+	/*Life() : Life(12, 12) {};*/
 	~Life();
 	void generate_life();
 	int check_rule(int k, int l);

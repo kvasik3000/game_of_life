@@ -29,6 +29,9 @@
     <ClInclude Include="Rule.h" />
     <ClInclude Include="View.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="in_game.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>

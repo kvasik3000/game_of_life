@@ -11,7 +11,8 @@ class View
 	Life* life;
 	void print_life();
 public:
-	View(int a, int b);
+	View(int a, int b, Rule* rule);
+	/*View() : View(30, 40) {};*/
 	~View();
 	void run_game();
 
