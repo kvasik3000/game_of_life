@@ -6,6 +6,7 @@
 #include <vector>
 #include"Life.h"
 #include <conio.h>
+#include <iomanip>
 
 View::View(int a, int b, Rule* rule)
 {
@@ -19,7 +20,9 @@ View::~View()
 
 void View::print_life()
 {
-
+	//
+	//std::cout << name << std::endl;
+	std::string name = "Game Of Life\n";
 	std::string buffer = "";
 	for (int i = 0; i < life->get_b() + 2; i++)
 	{
@@ -54,6 +57,11 @@ void View::print_life()
 	//std::cout << std::endl;
 	buffer += '\n';
 	system("cls");
+	std::cout << std::setw(life->get_a());
+	std::cout << name << std::endl;
+	std::cout <<"Чтобы запустить игру, нажмите кнопку Enter" << std::endl;
+	std::cout <<"Чтобы поставить игру на паузу, так же нажмите кнопку Enter" << std::endl;
+	std::cout <<"Чтобы завершить игру окончательно, нажмите кнопку Esc\n" << std::endl;
 	std::cout << buffer;
 }
 
@@ -61,22 +69,20 @@ void View::print_life()
 
 void View::run_game()
 {
-	/*std::cout << "dddddddddddddddddd" << std::endl;*/
-
 	life->generate_life();
+	
 	print_life();
 	Sleep(1000);
 	int count = 0;
+
 	while (true)
 	{
+		
 		if (_kbhit() && _getch() == 13) {
 
 			while (true)
 			{
-				/*char ch;*/
-
 				life->update();
-				//system("cls");
 				print_life();
 				Sleep(5);
 				if (_kbhit() && _getch() == 13) {
@@ -89,21 +95,9 @@ void View::run_game()
 
 			}
 		}
-		if (_kbhit() && _getch() == 27) {
+		
+		else if (_kbhit() && _getch() == 27) {
 			exit(0);
 		}
-		
-		
 	}
-	
-	//while (true)
-	//{
-	//	/*char ch;*/
-
-	//	life->update();
-	//	//system("cls");
-	//	print_life();
-	//	Sleep(15);
-
-	//}
 }

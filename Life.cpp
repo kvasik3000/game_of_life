@@ -90,8 +90,11 @@ void Life::generate_life()
 {
 	while (true)
 	{
+		//if (!_kbhit()) continue;
+		int key = _getch();
 		//Glider - םאזלטעו 1 
-		if (_kbhit() && _getch() == 49) {
+		if (key == 49) {
+			
 			int i = 3;
 			int j = 3;
 			life_array[i][j] = 1;
@@ -101,7 +104,7 @@ void Life::generate_life()
 			life_array[i + 1][j - 2] = 1;
 			break;
 		}
-		else if (_kbhit() && _getch() == 50)
+		else if (key == 50)
 		{
 			//random generate
 			for (int k = 1; k < a - 1; k++) {
@@ -111,7 +114,7 @@ void Life::generate_life()
 			}
 			break;
 		}
-		else if (_kbhit() && _getch() == 51)
+		else if (key == 51)
 		{
 			//Gosper glider gun
 			int i = 14;
@@ -154,6 +157,12 @@ void Life::generate_life()
 			life_array[i + 2][j + 16] = 1;
 			break;
 		}
+		else if (key == 72)
+		{
+			cout << "help" << endl;
+			break;
+		}
+		
 	}
 }
 

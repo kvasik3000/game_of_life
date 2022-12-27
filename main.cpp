@@ -5,11 +5,15 @@
 #include <fstream>
 #include <string>
 #include <vector>
-
+#include <iomanip>
+#include <conio.h>
 
 
 
 int main(int argc,char *argv[]) {
+	//std::string name = "Game Of Life";
+	//std::cout << name << std::endl;
+	setlocale(LC_ALL, "Russian");
 	std::string line ;
 	std::string name_of_life ;
 	//std::vector<std::string> v;
@@ -85,6 +89,17 @@ int main(int argc,char *argv[]) {
 	}
 	
 	in.close();
+	std::cout << std::setw(len_of_x);
+	std::cout << "############ Game Of Life ############" << std::endl;
+	std::cout << "ƒорогой друг, тебе предоставлена возможность сыграть в замечательную игру" << std::endl;
+	std::cout << "¬ данной игре ты можешь задать начальное поле, чтобы это сделать, € приготовил парочку шаблонов" << std::endl;
+	std::cout << "1) Glider, чтобы запустить это поле, нажми на клавишу 1" << std::endl;
+	std::cout << "2) Random field, чтобы запустить это поле, нажми на клавишу 2" << std::endl;
+	std::cout << "3) Gosper glider gun, чтобы запустить это поле, нажми на клавишу 3" << std::endl;
+
+
+	
+	
 	Rule rule(b_int, s_int);
 	
 	View game(len_of_x, len_of_y, &rule);
