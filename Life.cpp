@@ -94,7 +94,7 @@ void Life::generate_life()
 		int key = _getch();
 		//Glider - םאזלטעו 1 
 		if (key == 49) {
-			
+
 			int i = 3;
 			int j = 3;
 			life_array[i][j] = 1;
@@ -157,12 +157,238 @@ void Life::generate_life()
 			life_array[i + 2][j + 16] = 1;
 			break;
 		}
-		else if (key == 72)
+		else if (key == 52)
 		{
-			cout << "help" << endl;
+			//Pulsar
+			int i = this->a / 2;
+			int j = this->b / 2;
+			life_array[i - 1][j - 2] = 1;
+			life_array[i - 1][j - 3] = 1;
+			life_array[i - 1][j - 4] = 1;
+			life_array[i - 2][j - 5] = 1;
+			life_array[i - 3][j - 5] = 1;
+			life_array[i - 3][j - 4] = 1;
+			life_array[i - 3][j - 6] = 1;
+			life_array[i - 4][j - 6] = 1;
+			life_array[i - 2][j - 3] = 1;
+
+
+			life_array[i - 1][j + 2] = 1;
+			life_array[i - 1][j + 3] = 1;
+			life_array[i - 1][j + 4] = 1;
+			life_array[i - 2][j + 5] = 1;
+			life_array[i - 3][j + 5] = 1;
+			life_array[i - 3][j + 4] = 1;
+			life_array[i - 3][j + 6] = 1;
+			life_array[i - 4][j + 6] = 1;
+			life_array[i - 2][j + 3] = 1;
+
+
+			life_array[i - 2][j - 1] = 1;
+			life_array[i - 3][j - 1] = 1;
+			life_array[i - 4][j - 1] = 1;
+			life_array[i - 5][j - 2] = 1;
+			life_array[i - 5][j - 3] = 1;
+			life_array[i - 4][j - 3] = 1;
+			life_array[i - 6][j - 3] = 1;
+			life_array[i - 6][j - 4] = 1;
+			life_array[i - 3][j - 2] = 1;
+
+
+			life_array[i - 2][j + 1] = 1;
+			life_array[i - 3][j + 1] = 1;
+			life_array[i - 4][j + 1] = 1;
+			life_array[i - 5][j + 2] = 1;
+			life_array[i - 5][j + 3] = 1;
+			life_array[i - 4][j + 3] = 1;
+			life_array[i - 6][j + 3] = 1;
+			life_array[i - 6][j + 4] = 1;
+			life_array[i - 3][j + 2] = 1;
+
+
+			life_array[i + 1][j - 2] = 1;
+			life_array[i + 1][j - 3] = 1;
+			life_array[i + 1][j - 4] = 1;
+			life_array[i + 2][j - 5] = 1;
+			life_array[i + 3][j - 5] = 1;
+			life_array[i + 3][j - 4] = 1;
+			life_array[i + 3][j - 6] = 1;
+			life_array[i + 4][j - 6] = 1;
+			life_array[i + 2][j - 3] = 1;
+
+
+			life_array[i + 1][j + 2] = 1;
+			life_array[i + 1][j + 3] = 1;
+			life_array[i + 1][j + 4] = 1;
+			life_array[i + 2][j + 5] = 1;
+			life_array[i + 3][j + 5] = 1;
+			life_array[i + 3][j + 4] = 1;
+			life_array[i + 3][j + 6] = 1;
+			life_array[i + 4][j + 6] = 1;
+			life_array[i + 2][j + 3] = 1;
+
+
+			life_array[i + 2][j - 1] = 1;
+			life_array[i + 3][j - 1] = 1;
+			life_array[i + 4][j - 1] = 1;
+			life_array[i + 5][j - 2] = 1;
+			life_array[i + 5][j - 3] = 1;
+			life_array[i + 4][j - 3] = 1;
+			life_array[i + 6][j - 3] = 1;
+			life_array[i + 6][j - 4] = 1;
+			life_array[i + 3][j - 2] = 1;
+
+
+			life_array[i + 2][j + 1] = 1;
+			life_array[i + 3][j + 1] = 1;
+			life_array[i + 4][j + 1] = 1;
+			life_array[i + 5][j + 2] = 1;
+			life_array[i + 5][j + 3] = 1;
+			life_array[i + 4][j + 3] = 1;
+			life_array[i + 6][j + 3] = 1;
+			life_array[i + 6][j + 4] = 1;
+			life_array[i + 3][j + 2] = 1;
+
 			break;
 		}
-		
+		else if (key == 53)
+		{
+			//Penta-decathlon
+			int i = this->a / 2;
+			int j = this->b / 2;
+			life_array[i - 3][j] = 1;
+			life_array[i - 3][j + 1] = 1;
+			life_array[i - 3][j + 2] = 1;
+			life_array[i - 3][j - 1] = 1;
+			life_array[i - 3][j - 2] = 1;
+			life_array[i - 4][j] = 1;
+			life_array[i - 4][j - 1] = 1;
+			life_array[i - 4][j + 1] = 1;
+			life_array[i - 5][j] = 1;
+
+			life_array[i + 4][j] = 1;
+			life_array[i + 4][j + 1] = 1;
+			life_array[i + 4][j + 2] = 1;
+			life_array[i + 4][j - 1] = 1;
+			life_array[i + 4][j - 2] = 1;
+			life_array[i + 5][j] = 1;
+			life_array[i + 5][j - 1] = 1;
+			life_array[i + 5][j + 1] = 1;
+			life_array[i + 6][j] = 1;
+
+			break;
+		}
+		else if (key == 54) {
+
+			//Light-weight spaceship
+			int i = this->a / 2;
+			int j = this->b / 2;
+			life_array[i][j] = 1;
+			life_array[i + 1][j] = 1;
+			life_array[i + 2][j] = 1;
+			life_array[i + 3][j - 1] = 1;
+			life_array[i][j - 1] = 1;
+			life_array[i][j - 2] = 1;
+			life_array[i][j - 3] = 1;
+			life_array[i + 1][j - 4] = 1;
+			life_array[i + 3][j - 4] = 1;
+			break;
+
+		}
+		else if (key == 55)
+		{
+			//double frame
+			for (int i = 0; i < this->a; i++)
+			{
+				life_array[i][0] = 1;
+				life_array[i][this->b - 1] = 1;
+				life_array[i][1] = 1;
+				life_array[i][this->b - 2] = 1;
+			}
+			for (int i = 1; i < this->b - 1; i++)
+			{
+				life_array[0][i] = 1;
+				life_array[this->a - 1][i] = 1;
+				life_array[1][i] = 1;
+				life_array[this->a - 2][i] = 1;
+			}
+
+			break;
+		}
+		else if (key == 56)
+		{
+			//three trapezes
+			int i = this->a / 2;
+			int j = this->b / 2;
+
+			life_array[i - 1][j] = 1;
+			life_array[i + 1][j] = 1;
+			life_array[i][j - 1] = 1;
+			life_array[i][j + 1] = 1;
+
+			life_array[i - 4][j] = 1;
+			life_array[i + 4][j] = 1;
+			life_array[i][j + 4] = 1;
+			life_array[i][j - 4] = 1;
+
+			life_array[i - 3][j - 1] = 1;
+			life_array[i + 3][j - 1] = 1;
+			life_array[i + 1][j - 3] = 1;
+			life_array[i - 1][j + 3] = 1;
+
+			life_array[i - 2][j - 2] = 1;
+			life_array[i + 2][j - 2] = 1;
+			life_array[i - 2][j + 2] = 1;
+			life_array[i + 2][j + 2] = 1;
+
+			life_array[i - 3][j + 1] = 1;
+			life_array[i + 3][j + 1] = 1;
+			life_array[i - 1][j - 3] = 1;
+			life_array[i + 1][j + 3] = 1;
+
+			life_array[i - 8][j] = 1;
+			life_array[i + 8][j] = 1;
+			life_array[i][j+ 8] = 1;
+			life_array[i][j - 8] = 1;
+
+			life_array[i - 6][j+2] = 1;
+			life_array[i - 6][j-2] = 1;
+			life_array[i + 6][j+2] = 1;
+			life_array[i + 6][j-2] = 1;
+			life_array[i+2][j + 6] = 1;
+			life_array[i-2][j + 6] = 1;
+			life_array[i+2][j - 6] = 1;
+			life_array[i-2][j - 6] = 1;
+
+			life_array[i - 7][j + 1] = 1;
+			life_array[i - 7][j - 1] = 1;
+			life_array[i + 7][j + 1] = 1;
+			life_array[i + 7][j - 1] = 1;
+			life_array[i + 1][j + 7] = 1;
+			life_array[i - 1][j + 7] = 1;
+			life_array[i + 1][j - 7] = 1;
+			life_array[i - 1][j - 7] = 1;
+
+			life_array[i - 5][j - 3] = 1;
+			life_array[i + 5][j - 3] = 1;
+			life_array[i + 3][j - 5] = 1;
+			life_array[i - 3][j + 5] = 1;
+
+			life_array[i - 4][j - 4] = 1;
+			life_array[i + 4][j - 4] = 1;
+			life_array[i - 4][j + 4] = 1;
+			life_array[i + 4][j + 4] = 1;
+
+			life_array[i - 5][j + 3] = 1;
+			life_array[i + 5][j + 3] = 1;
+			life_array[i - 3][j - 5] = 1;
+			life_array[i + 3][j + 5] = 1;
+
+			
+
+			break;
+		}
+
 	}
 }
 
@@ -190,7 +416,7 @@ void Life::update()
 {
 	for (int k = 0; k < a; k++) {
 		for (int l = 0; l < b; l++) {
-			
+
 			check_rule(k, l);
 		}
 	}

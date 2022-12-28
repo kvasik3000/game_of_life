@@ -89,6 +89,9 @@ void View::run_game()
 					std::cout << "number of iteration:" << count << std::endl;
 					break;
 				}
+				else if (_kbhit() && _getch() == 27) {
+					exit(0);
+				}
 				
 				count++;
 				std::cout <<"number of iteration:" << count << std::endl;
